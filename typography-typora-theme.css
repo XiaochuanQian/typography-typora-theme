@@ -1,0 +1,662 @@
+:root {
+  --background-color: #ffffff;
+  --foreground-color: #2e405b;
+  --primary-color: #eee;
+  --font-list: "EB Garamond", "Merriweather", "Libre Baskerville", "Palatino",
+    "Century Schoolbook", "Source Han Serif SC", "Source Han Serif TC",
+    "KaiTi", "FangSong", serif;
+  --title-font-list: "HiraMinProN-W6", "Source Han Serif CN", "Source Han Serif SC",
+    "Source Han Serif TC", serif;
+  --vertical-primary-padding-top: 0;
+  --vertical-secondary-padding-top: 1px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
+
+html,
+body,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-list);
+  color: var(--foreground-color);
+}
+
+content {
+    font-size: 18px;
+    line-height: 1.5em;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
+    min-height: 100vh;
+}
+
+html {
+  background: var(--background-color);
+}
+
+.foreground {
+  background: var(--foreground-color) !important;
+}
+
+.background {
+  background: var(--background-color) !important;
+}
+
+.foreground-text * {
+  color: var(--foreground-color) !important;
+}
+
+.background-text * {
+  color: var(--background-color) !important;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.5em;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
+  min-height: 100vh;
+}
+
+.container {
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+}
+
+.full-width-container {
+  width: 100vw;
+}
+
+.main-container {
+  text-align: left;
+  margin: 0;
+  padding: 80px 40px;
+  overflow: hidden;
+  float: left;
+}
+
+.main-container :nth-child(1) {
+  margin-top: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+}
+
+.vertical-text * {
+  line-height: 1;
+  text-align: left;
+}
+
+.side-container {
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  font-style: normal;
+  font-size: 1em;
+  margin: 0;
+  transform: rotate(0deg);
+  text-align: left;
+  float: right;
+  padding: 80px 20px;
+}
+
+.ar-year {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.date {
+  margin-bottom: 0px;
+}
+
+.ar-date {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.archive :first-child {
+  padding-left: 0;
+}
+
+.archive ul {
+  list-style-type: none;
+}
+
+.site-title {
+  font-weight: bolder;
+  font-style: normal;
+  width: auto;
+  height: auto;
+  margin: 0 0 0 -2px;
+  text-align: left;
+  font-size: 0.5em;
+  padding: 0 0 50px 0;
+  border-left: solid var(--foreground-color) 2px;
+  transition: padding 0.8s ease 0s, background 0.8s ease 0s;
+}
+
+.site-title:hover {
+  padding: 15px 0 35px 0;
+  color: var(--background-color) !important;
+  background: var(--foreground-color) !important;
+  border-left: solid var(--foreground-color) 2px;
+}
+
+.site-title:hover * {
+  color: var(--background-color) !important;
+}
+
+.site-title :first-child {
+  margin-right: 10px;
+}
+
+.site-title * {
+  text-align: left;
+  font-weight: bolder;
+  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 0;
+  font-family: var(--title-font-list);
+}
+
+.site-title-large {
+  font-size: 50px;
+  padding-top: var(--vertical-primary-padding-top);
+}
+
+.site-title-small {
+  font-size: 30px;
+  padding-top: var(--vertical-secondary-padding-top);
+}
+
+/* 基础样式 */
+html, body {
+  font-family: var(--text-font);
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-color);
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  margin: 2rem 0 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 2.5em;
+  border-bottom: 2px solid var(--md-char-color);
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 2em;
+  border-bottom: 1px solid var(--md-char-color);
+  padding-bottom: 0.2em;
+}
+
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+/* 段落和文本 */
+p {
+  margin: 1em 0;
+  line-height: 1.8;
+}
+
+/* 引用块 */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: 0 15px;
+  color: var(--meta-content-color);
+  margin: 1em 0;
+}
+
+/* 代码块 */
+pre.md-fences {
+  font-family: var(--monospace);
+  background: #f6f8fa;
+  border-radius: 3px;
+  padding: 16px;
+  font-size: 0.9em;
+  margin: 1.5em 0;
+}
+
+code {
+  font-family: var(--monospace);
+  background: #f3f3f3;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* 列表样式 */
+ul, ol {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+li {
+  margin: 0.5em 0;
+  line-height: 1.8;
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+}
+
+table th {
+  background: #f6f8fa;
+  font-weight: bold;
+}
+
+/* 链接样式 */
+a {
+  color: var(--foreground-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--foreground-color);
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+
+a:hover {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+}
+
+/* 图片样式 */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em auto;
+  display: block;
+}
+
+/* 水平线 */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2em 0;
+}
+
+/* 目录样式 */
+.md-toc {
+  margin: 2em 0;
+  padding: 1em;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+
+.md-toc-content {
+  margin: 1em 0;
+}
+
+/* 打印样式 */
+@media print {
+  .typora-export * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  @page {
+    margin: 2cm;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+  
+  img, table {
+    page-break-inside: avoid;
+  }
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+  
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.75em; }
+  h3 { font-size: 1.5em; }
+  h4 { font-size: 1.25em; }
+  h5 { font-size: 1.1em; }
+  h6 { font-size: 1em; }
+}
+
+/* 源代码模式 */
+.cm-s-typora-default .cm-header {
+  color: var(--foreground-color);
+  font-weight: bold;
+}
+
+.cm-s-typora-default .cm-link {
+  color: var(--foreground-color);
+  text-decoration: underline;
+}
+
+/* 侧边栏样式 */
+#typora-sidebar {
+  background: var(--side-bar-bg-color);
+  border-right: var(--window-border);
+}
+
+.file-list-item.active {
+  background: var(--active-file-bg-color);
+}
+
+/* 专注模式 */
+.on-focus-mode blockquote {
+  border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+.file-list-item:hover {
+  background: var(--item-hover-bg-color);
+}
+
+@media (max-width: 768px) {
+  body {
+    line-height: normal;
+  }
+
+  h1 { font-size: 40px; }
+  h2 { font-size: 34px; }
+  h3 { font-size: 28px; }
+  h4 { font-size: 22px; }
+  h5 { font-size: 16px; }
+  h6 { font-size: 14px; }
+
+  .site-title-large { font-size: 38px; }
+  .site-title-small { font-size: 22px; }
+}
+
+@media only screen and (max-height: 860px) {
+  .site-title-large { font-size: 32px; }
+  .site-title-small { font-size: 20px; }
+}
+
+@media only screen and (max-height: 600px) {
+  body {
+    line-height: normal;
+  }
+
+  h1 { font-size: 40px; }
+  h2 { font-size: 34px; }
+  h3 { font-size: 28px; }
+  h4 { font-size: 22px; }
+  h5 { font-size: 16px; }
+  h6 { font-size: 14px; }
+
+  .site-title-large { font-size: 38px; }
+  .site-title-small { font-size: 22px; }
+
+  .vertical-text {
+    writing-mode: horizontal-tb;
+  }
+
+  .site-title {
+    margin: 0;
+    font-weight: bolder;
+    font-style: normal;
+    width: auto;
+    height: auto;
+    font-size: 0.5em;
+    padding: 0;
+    border-left: none;
+    text-align: center;
+    transition: none;
+  }
+
+  .site-title * {
+    text-align: center;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .site-title:hover {
+    color: var(--foreground-color) !important;
+    background: transparent !important;
+    padding: 0;
+    border: none;
+  }
+
+  .site-title:hover * {
+    color: var(--foreground-color) !important;
+    background: transparent !important;
+  }
+
+  .main-container {
+    text-align: left;
+    height: auto;
+    margin: 0;
+    padding: 20px 30px;
+    overflow: auto;
+  }
+
+  .side-container {
+    padding: 40px 30px 0 30px;
+    height: auto;
+    position: relative;
+    left: 0;
+  }
+
+  .site-title-links {
+    position: unset;
+    padding: 10px 0;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .site-title-links ul li {
+    display: inline;
+    margin: 0 3px;
+    font-size: 16px;
+  }
+
+  footer {
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+
+  a {
+    padding: 0;
+  }
+
+  .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px 0;
+  }
+
+  .post-meta {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .post-abstract {
+    font-size: 16px;
+  }
+
+  .soc {
+    display: block !important;
+  }
+
+  .site-nav-footer {
+    display: none !important;
+  }
+
+  .site-bottom-footer {
+    display: block !important;
+  }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadein-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadein-top {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes swift-down {
+  from { transform: translateY(0%); }
+  to { transform: translateY(20%); }
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fadein 1s ease-out;
+}
+
+.fadeInRight {
+  animation: fadein-right 1s ease-out;
+}
+
+.fadeInTop {
+  animation: fadein-top 1s ease-out;
+}
+
+.swiftDown {
+  animation: swift-down 1s ease-out;
+}
+
+.swiftDownReversed {
+  animation: swift-down 1s reverse ease-out;
+}
+
+/* 添加浏览器前缀支持 */
+@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+@-webkit-keyframes fadein-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0px); }
+}
+@-moz-keyframes fadein-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0px); }
+}
+@-ms-keyframes fadein-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0px); }
+}
+@-o-keyframes fadein-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0px); }
+}
+
+@-webkit-keyframes fadein-top {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+@-moz-keyframes fadein-top {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+@-ms-keyframes fadein-top {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+@-o-keyframes fadein-top {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0px); }
+}
+
+@-webkit-keyframes swift-down {
+  from { transform: translateY(0%); }
+  to { transform: translateY(20%); }
+}
+@-moz-keyframes swift-down {
+  from { transform: translateY(0%); }
+  to { transform: translateY(20%); }
+}
+@-ms-keyframes swift-down {
+  from { transform: translateY(0%); }
+  to { transform: translateY(20%); }
+}
+@-o-keyframes swift-down {
+  from { transform: translateY(0%); }
+  to { transform: translateY(20%); }
+} 
