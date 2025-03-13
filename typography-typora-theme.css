@@ -1,7 +1,15 @@
 :root {
-  --background-color: #ffffff;
-  --foreground-color: #2e405b;
-  --primary-color: #eee;
+  /* --bg-color: #ffffff; */
+  --text-color: #2e405b;
+  --md-char-color: #808080;
+  --meta-content-color: #757575;
+  --primary-color: #2e405b;
+  --window-border: 1px solid #eee;
+  --active-file-bg-color: #f3f3f3;
+  --side-bar-bg-color: #fafafa;
+  --item-hover-bg-color: #f3f3f3;
+  --control-text-color: #777;
+  --monospace: "Source Code Pro", "Cascadia Code", Consolas, monospace;
   --font-list: "EB Garamond", "Merriweather", "Libre Baskerville", "Palatino",
     "Century Schoolbook", "Source Han Serif SC", "Source Han Serif TC",
     "KaiTi", "FangSong", serif;
@@ -13,6 +21,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
 
+/* 基础样式 */
 html,
 body,
 span,
@@ -24,41 +33,27 @@ h4,
 h5,
 h6 {
   font-family: var(--font-list);
-  color: var(--foreground-color);
-}
-
-content {
-    font-size: 18px;
-    line-height: 1.5em;
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
-    background-repeat: repeat;
-    background-attachment: fixed;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
-    min-height: 100vh;
+  color: var(--text-color);
+  font-weight: 500;
 }
 
 html {
-  background: var(--background-color);
+  background: var(--bg-color);
 }
 
-.foreground {
-  background: var(--foreground-color) !important;
+content {
+  font-size: 18px;
+  line-height: 1.5em;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
+  min-height: 100vh;
 }
 
-.background {
-  background: var(--background-color) !important;
-}
-
-.foreground-text * {
-  color: var(--foreground-color) !important;
-}
-
-.background-text * {
-  color: var(--background-color) !important;
-}
-
+/* 标题样式 */
 h1 {
   font-size: 42px;
 }
@@ -83,18 +78,7 @@ h6 {
   font-size: 14px;
 }
 
-body {
-  font-size: 18px;
-  line-height: 1.5em;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
-  min-height: 100vh;
-}
-
+/* 容器样式 */
 .container {
   background-color: transparent;
   padding: 0;
@@ -121,6 +105,7 @@ body {
   margin: 0;
 }
 
+/* 垂直文本 */
 .vertical-text {
   writing-mode: vertical-rl;
 }
@@ -130,6 +115,7 @@ body {
   text-align: left;
 }
 
+/* 侧边容器 */
 .side-container {
   height: 100vh;
   position: fixed;
@@ -143,6 +129,7 @@ body {
   padding: 80px 20px;
 }
 
+/* 归档样式 */
 .ar-year {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -165,6 +152,7 @@ body {
   list-style-type: none;
 }
 
+/* 站点标题 */
 .site-title {
   font-weight: bolder;
   font-style: normal;
@@ -174,19 +162,19 @@ body {
   text-align: left;
   font-size: 0.5em;
   padding: 0 0 50px 0;
-  border-left: solid var(--foreground-color) 2px;
+  border-left: solid var(--primary-color) 2px;
   transition: padding 0.8s ease 0s, background 0.8s ease 0s;
 }
 
 .site-title:hover {
   padding: 15px 0 35px 0;
-  color: var(--background-color) !important;
-  background: var(--foreground-color) !important;
-  border-left: solid var(--foreground-color) 2px;
+  color: var(--bg-color) !important;
+  background: var(--primary-color) !important;
+  border-left: solid var(--primary-color) 2px;
 }
 
 .site-title:hover * {
-  color: var(--background-color) !important;
+  color: var(--bg-color) !important;
 }
 
 .site-title :first-child {
@@ -212,40 +200,22 @@ body {
   padding-top: var(--vertical-secondary-padding-top);
 }
 
-/* 基础样式 */
-html, body {
-  font-family: var(--text-font);
-  color: var(--text-color);
-  line-height: 1.8;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  background: var(--bg-color);
+/* 辅助类 */
+.foreground {
+  background: var(--primary-color) !important;
 }
 
-/* 标题样式 */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-  margin: 2rem 0 1rem;
-  font-weight: bold;
-  line-height: 1.4;
+.background {
+  background: var(--bg-color) !important;
 }
 
-h1 {
-  font-size: 2.5em;
-  border-bottom: 2px solid var(--md-char-color);
-  padding-bottom: 0.3em;
+.foreground-text * {
+  color: var(--primary-color) !important;
 }
 
-h2 {
-  font-size: 2em;
-  border-bottom: 1px solid var(--md-char-color);
-  padding-bottom: 0.2em;
+.background-text * {
+  color: var(--bg-color) !important;
 }
-
-h3 { font-size: 1.75em; }
-h4 { font-size: 1.5em; }
-h5 { font-size: 1.25em; }
-h6 { font-size: 1em; }
 
 /* 段落和文本 */
 p {
@@ -255,10 +225,11 @@ p {
 
 /* 引用块 */
 blockquote {
-  border-left: 4px solid var(--primary-color);
+  border-left: 4px solid #eee;
   padding: 0 15px;
   color: var(--meta-content-color);
   margin: 1em 0;
+  /* background-color: rgba(46, 64, 91, 0.05); */
 }
 
 /* 代码块 */
@@ -269,6 +240,7 @@ pre.md-fences {
   padding: 16px;
   font-size: 0.9em;
   margin: 1.5em 0;
+  border: none;
 }
 
 code {
@@ -309,16 +281,16 @@ table th {
 
 /* 链接样式 */
 a {
-  color: var(--foreground-color);
+  color: var(--primary-color);
   text-decoration: none;
-  border-bottom: 1px solid var(--foreground-color);
-  transition: background-color 0.3s;
-  transition: color 0.3s;
+  border-bottom: 1px solid var(--primary-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a:hover {
-  background-color: var(--foreground-color);
-  color: var(--background-color);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  --text-color: var(--bg-color);
 }
 
 /* 图片样式 */
@@ -368,28 +340,14 @@ hr {
   }
 }
 
-/* 响应式设计 */
-@media screen and (max-width: 768px) {
-  html, body {
-    font-size: 14px;
-  }
-  
-  h1 { font-size: 2em; }
-  h2 { font-size: 1.75em; }
-  h3 { font-size: 1.5em; }
-  h4 { font-size: 1.25em; }
-  h5 { font-size: 1.1em; }
-  h6 { font-size: 1em; }
-}
-
 /* 源代码模式 */
 .cm-s-typora-default .cm-header {
-  color: var(--foreground-color);
+  color: var(--primary-color);
   font-weight: bold;
 }
 
 .cm-s-typora-default .cm-link {
-  color: var(--foreground-color);
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -412,6 +370,7 @@ hr {
   background: var(--item-hover-bg-color);
 }
 
+/* 响应式设计 */
 @media (max-width: 768px) {
   body {
     line-height: normal;
@@ -437,13 +396,6 @@ hr {
   body {
     line-height: normal;
   }
-
-  h1 { font-size: 40px; }
-  h2 { font-size: 34px; }
-  h3 { font-size: 28px; }
-  h4 { font-size: 22px; }
-  h5 { font-size: 16px; }
-  h6 { font-size: 14px; }
 
   .site-title-large { font-size: 38px; }
   .site-title-small { font-size: 22px; }
@@ -472,14 +424,14 @@ hr {
   }
 
   .site-title:hover {
-    color: var(--foreground-color) !important;
+    color: var(--primary-color) !important;
     background: transparent !important;
     padding: 0;
     border: none;
   }
 
   .site-title:hover * {
-    color: var(--foreground-color) !important;
+    color: var(--primary-color) !important;
     background: transparent !important;
   }
 
@@ -548,6 +500,7 @@ hr {
   }
 }
 
+/* 动画效果 */
 @keyframes fadein {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -604,7 +557,7 @@ hr {
   animation: swift-down 1s reverse ease-out;
 }
 
-/* 添加浏览器前缀支持 */
+/* 浏览器前缀支持 */
 @-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 @-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 @-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
@@ -659,4 +612,12 @@ hr {
 @-o-keyframes swift-down {
   from { transform: translateY(0%); }
   to { transform: translateY(20%); }
+}
+
+/* 添加文本显示宽度相关样式 */
+#write {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  line-height: 1.8;
 } 
